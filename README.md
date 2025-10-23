@@ -29,6 +29,7 @@ Please consider [crediting all contributors](CREDITS.md) involved in the project
 - **`pokeemerald-expansion`** incorporates regular updates from `pokeemerald`, including bug fixes and documentation improvements.
 
 # [Getting Started](INSTALL.md)
+# test
 
 ❗❗ **Important**: Do not use GitHub's "Download Zip" option as it will not include commit history. This is necessary if you want to update or merge other feature branches. 
 
