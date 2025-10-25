@@ -5703,6 +5703,12 @@ bool32 CanSetNonVolatileStatus(u32 battlerAtk, u32 battlerDef, u32 abilityAtk, u
             battleScript = BattleScript_NotAffected;
         }
         break;
+    case MOVE_EFFECT_INFECTION:
+        if (gBattleMons[battlerDef].status1 & STATUS1_INFECTED)
+        {
+            battleScript = BattleScript_AlreadyBurned;
+        }
+        break;
     default:
         break;
     }

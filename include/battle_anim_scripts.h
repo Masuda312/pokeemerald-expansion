@@ -942,6 +942,7 @@ extern const u8 gBattleAnimMove_GMaxRapidFlow[];
 extern const u8 gBattleAnimStatus_Poison[];
 extern const u8 gBattleAnimStatus_Confusion[];
 extern const u8 gBattleAnimStatus_Burn[];
+extern const u8 gBattleAnimStatus_Infection[];
 extern const u8 gBattleAnimStatus_Infatuation[];
 extern const u8 gBattleAnimStatus_Sleep[];
 extern const u8 gBattleAnimStatus_Paralysis[];

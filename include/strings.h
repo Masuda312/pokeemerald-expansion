@@ -1532,6 +1532,7 @@ extern const u8 gText_Burn[];
 extern const u8 gText_Ice[];
 extern const u8 gText_Confusion[];
 extern const u8 gText_Love[];
+extern const u8 gText_Infection[];
 
 // battle message
 extern const u8 gText_PkmnTransferredSomeonesPCBoxFull[];

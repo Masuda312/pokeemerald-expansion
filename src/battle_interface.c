@@ -77,6 +77,9 @@ enum
     HEALTHBOX_GFX_STATUS_FRB_BATTLER0,  //status frb
     HEALTHBOX_GFX_116,
     HEALTHBOX_GFX_117,
+    HEALTHBOX_GFX_STATUS_INF_BATTLER0,
+    HEALTHBOX_GFX_124,                 // INF middle
+    HEALTHBOX_GFX_125,                 // INF right
     HEALTHBOX_GFX_36, //misc [Black section]
     HEALTHBOX_GFX_37, //misc [Black section]
     HEALTHBOX_GFX_38, //misc [Black section]
@@ -130,9 +133,12 @@ enum
     HEALTHBOX_GFX_STATUS_FRB_BATTLER1, //status2 "FRB"
     HEALTHBOX_GFX_118,
     HEALTHBOX_GFX_119,
+    HEALTHBOX_GFX_STATUS_INF_BATTLER1,
+    HEALTHBOX_GFX_126,                 // INF middle
+    HEALTHBOX_GFX_127,                 // INF right
     HEALTHBOX_GFX_STATUS_PSN_BATTLER2, //status3 "PSN"
     HEALTHBOX_GFX_87,
-    HEALTHBOX_GFX_88,
+    HEALTHBOX_GFX_88, 
     HEALTHBOX_GFX_STATUS_PRZ_BATTLER2, //status3 "PRZ"
     HEALTHBOX_GFX_90,
     HEALTHBOX_GFX_91,
@@ -148,6 +154,9 @@ enum
     HEALTHBOX_GFX_STATUS_FRB_BATTLER2, //status3 "FRB"
     HEALTHBOX_GFX_120,
     HEALTHBOX_GFX_121,
+    HEALTHBOX_GFX_STATUS_INF_BATTLER2,
+    HEALTHBOX_GFX_128,                 // INF middle
+    HEALTHBOX_GFX_129,                 // INF right
     HEALTHBOX_GFX_STATUS_PSN_BATTLER3, //status4 "PSN"
     HEALTHBOX_GFX_102,
     HEALTHBOX_GFX_103,
@@ -166,6 +175,9 @@ enum
     HEALTHBOX_GFX_STATUS_FRB_BATTLER3, //status4 "FRB"
     HEALTHBOX_GFX_122,
     HEALTHBOX_GFX_123,
+    HEALTHBOX_GFX_STATUS_INF_BATTLER3,
+    HEALTHBOX_GFX_130,                 // INF middle
+    HEALTHBOX_GFX_131,                 // INF right
     HEALTHBOX_GFX_FRAME_END,
     HEALTHBOX_GFX_FRAME_END_BAR,
 };
@@ -592,7 +604,8 @@ enum
     PAL_STATUS_PAR,
     PAL_STATUS_SLP,
     PAL_STATUS_FRZ,
-    PAL_STATUS_BRN
+    PAL_STATUS_BRN,
+    PAL_STATUS_INF
 };
 
 static const u16 sStatusIconColors[] =
@@ -602,6 +615,7 @@ static const u16 sStatusIconColors[] =
     [PAL_STATUS_SLP] = RGB(20, 20, 17),
     [PAL_STATUS_FRZ] = RGB(17, 22, 28),
     [PAL_STATUS_BRN] = RGB(28, 14, 10),
+    [PAL_STATUS_INF] = RGB(24, 12, 24),
 };
 
 static const struct WindowTemplate sHealthboxWindowTemplate = {
@@ -1854,6 +1868,11 @@ static void UpdateStatusIconInHealthbox(u8 healthboxSpriteId)
         statusGfxPtr = GetHealthboxElementGfxPtr(GetStatusIconForBattlerId(HEALTHBOX_GFX_STATUS_PRZ_BATTLER0, battler));
         statusPalId = PAL_STATUS_PAR;
     }
+    else if (status & STATUS1_INFECTED)
+    {
+        statusGfxPtr = GetHealthboxElementGfxPtr(GetStatusIconForBattlerId(HEALTHBOX_GFX_STATUS_INF_BATTLER0, battler));
+        statusPalId = PAL_STATUS_INF;
+    }
     else
     {
         statusGfxPtr = GetHealthboxElementGfxPtr(HEALTHBOX_GFX_39);
@@ -1950,6 +1969,16 @@ static u8 GetStatusIconForBattlerId(u8 statusElementId, u8 battler)
             ret = HEALTHBOX_GFX_STATUS_BRN_BATTLER2;
         else
             ret = HEALTHBOX_GFX_STATUS_BRN_BATTLER3;
+        break;
+    case HEALTHBOX_GFX_STATUS_INF_BATTLER0:
+        if (battler == 0)
+            ret = HEALTHBOX_GFX_STATUS_INF_BATTLER0;
+        else if (battler == 1)
+            ret = HEALTHBOX_GFX_STATUS_INF_BATTLER1;
+        else if (battler == 2)
+            ret = HEALTHBOX_GFX_STATUS_INF_BATTLER2;
+        else
+            ret = HEALTHBOX_GFX_STATUS_INF_BATTLER3;
         break;
     }
     return ret;

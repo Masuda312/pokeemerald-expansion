@@ -33,6 +33,7 @@ enum EndTurnResolutionOrder
     ENDTURN_POISON,
     ENDTURN_BURN,
     ENDTURN_FROSTBITE,
+    ENDTURN_INFECTED,
     ENDTURN_NIGHTMARE,
     ENDTURN_CURSE,
     ENDTURN_WRAP,
@@ -706,6 +707,28 @@ static bool32 HandleEndTurnFrostbite(u32 battler)
         if (gBattleStruct->moveDamage[battler] == 0)
             gBattleStruct->moveDamage[battler] = 1;
         BattleScriptExecute(BattleScript_FrostbiteTurnDmg);
+        effect = TRUE;
+    }
+
+    return effect;
+}
+
+static bool32 HandleEndTurnInfection(u32 battler)
+{
+    bool32 effect = FALSE;
+
+    u32 ability = GetBattlerAbility(battler);
+
+    gBattleStruct->turnEffectsBattlerId++;
+
+    if (gBattleMons[battler].status1 & STATUS1_INFECTED
+     && IsBattlerAlive(battler)
+     && !IsAbilityAndRecord(battler, ability, ABILITY_MAGIC_GUARD))
+    {
+        gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / 4;
+        if (gBattleStruct->moveDamage[battler] == 0)
+            gBattleStruct->moveDamage[battler] = 1;
+        BattleScriptExecute(BattleScript_InfectionTurnDmg);
         effect = TRUE;
     }
 
@@ -1526,6 +1549,7 @@ static bool32 (*const sEndTurnEffectHandlers[])(u32 battler) =
     [ENDTURN_POISON] = HandleEndTurnPoison,
     [ENDTURN_BURN] = HandleEndTurnBurn,
     [ENDTURN_FROSTBITE] = HandleEndTurnFrostbite,
+    [ENDTURN_INFECTED] = HandleEndTurnInfection,
     [ENDTURN_NIGHTMARE] = HandleEndTurnNightmare,
     [ENDTURN_CURSE] = HandleEndTurnCurse,
     [ENDTURN_WRAP] = HandleEndTurnWrap,

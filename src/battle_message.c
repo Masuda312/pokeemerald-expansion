@@ -215,6 +215,8 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_PKMNWASDEFROSTED]                     = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} thawed out!"),
     [STRINGID_PKMNWASDEFROSTED2]                    = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} thawed out!"),
     [STRINGID_PKMNWASDEFROSTEDBY]                   = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX}'s {B_CURRENT_MOVE} melted the ice!"),
+    [STRINGID_PKMNWASINFECTED]                      = COMPOUND_STRING("{B_EFF_NAME_WITH_PREFIX} got infected!"),
+    [STRINGID_PKMNHURTBYINFECTION]                  = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} got hurt badly by its infection!"),
     [STRINGID_PKMNWASPARALYZED]                     = COMPOUND_STRING("{B_EFF_NAME_WITH_PREFIX} is paralyzed, so it may be unable to move!"),
     [STRINGID_PKMNWASPARALYZEDBY]                   = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_BUFF1} paralyzed {B_EFF_NAME_WITH_PREFIX2}, so it may be unable to move!"), //not in gen 5+, ability popup
     [STRINGID_PKMNISPARALYZED]                      = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} couldn't move because it's paralyzed!"),
@@ -1196,13 +1198,19 @@ const u16 gFellAsleepStringIds[] =
 const u16 gGotBurnedStringIds[] =
 {
     [B_MSG_STATUSED]            = STRINGID_PKMNWASBURNED,
-    [B_MSG_STATUSED_BY_ABILITY] = STRINGID_PKMNBURNEDBY
+    [B_MSG_STATUSED_BY_ABILITY] = STRINGID_PKMNBURNEDBY,
 };
 
 const u16 gGotFrostbiteStringIds[] =
 {
     [B_MSG_STATUSED]            = STRINGID_PKMNGOTFROSTBITE,
     [B_MSG_STATUSED_BY_ABILITY] = STRINGID_PKMNGOTFROSTBITE,
+};
+
+const u16 gGotInfectedStringIds[] =
+{
+    [B_MSG_STATUSED]            = STRINGID_PKMNWASINFECTED,
+    [B_MSG_STATUSED_BY_ABILITY] = STRINGID_PKMNWASINFECTED,    
 };
 
 const u16 gFrostbiteHealedStringIds[] =
@@ -1375,7 +1383,7 @@ const u16 gRoomsStringIds[] =
 
 const u16 gStatusConditionsStringIds[] =
 {
-    STRINGID_PKMNWASPOISONED, STRINGID_PKMNBADLYPOISONED, STRINGID_PKMNWASBURNED, STRINGID_PKMNWASPARALYZED, STRINGID_PKMNFELLASLEEP, STRINGID_PKMNGOTFROSTBITE
+    STRINGID_PKMNWASPOISONED, STRINGID_PKMNBADLYPOISONED, STRINGID_PKMNWASBURNED, STRINGID_PKMNWASPARALYZED, STRINGID_PKMNFELLASLEEP, STRINGID_PKMNGOTFROSTBITE, STRINGID_PKMNWASINFECTED
 };
 
 const u16 gDamageNonTypesStartStringIds[] =
@@ -1442,6 +1450,7 @@ const u8 gText_Paralysis[] = _("paralysis");
 const u8 gText_Ice[] = _("ice");
 const u8 gText_Confusion[] = _("confusion");
 const u8 gText_Love[] = _("love");
+const u8 gText_Infection[] = _("infection");
 const u8 gText_SpaceAndSpace[] = _(" and ");
 const u8 gText_CommaSpace[] = _(", ");
 const u8 gText_Space2[] = _(" ");

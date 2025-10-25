@@ -31025,6 +31025,16 @@ BurnFlame:
 	delay 4
 	return
 
+gBattleAnimStatus_Infection::
+	loadspritegfx ANIM_TAG_SMALL_EMBER
+	playsewithpan SE_M_FLAME_WHEEL, SOUND_PAN_TARGET
+	call BurnFlame
+	call BurnFlame
+	call BurnFlame
+	waitforvisualfinish
+	end
+	return
+
 gBattleAnimStatus_Infatuation::
 	loadspritegfx ANIM_TAG_MAGENTA_HEART
 	playsewithpan SE_M_CHARM, SOUND_PAN_ATTACKER

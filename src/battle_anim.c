@@ -189,6 +189,7 @@ static const u8* const sBattleAnims_StatusConditions[NUM_B_ANIMS_STATUS] =
     [B_ANIM_STATUS_PSN]         = gBattleAnimStatus_Poison,
     [B_ANIM_STATUS_CONFUSION]   = gBattleAnimStatus_Confusion,
     [B_ANIM_STATUS_BRN]         = gBattleAnimStatus_Burn,
+    [B_ANIM_STATUS_INF]         = gBattleAnimStatus_Infection,
     [B_ANIM_STATUS_INFATUATION] = gBattleAnimStatus_Infatuation,
     [B_ANIM_STATUS_SLP]         = gBattleAnimStatus_Sleep,
     [B_ANIM_STATUS_PRZ]         = gBattleAnimStatus_Paralysis,
