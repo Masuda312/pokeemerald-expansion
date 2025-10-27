@@ -10,6 +10,7 @@
 #include "script.h"
 #include "event_data.h"
 #include "metatile_behavior.h"
+#include "mutation.h"
 #include "field_player_avatar.h"
 #include "fieldmap.h"
 #include "follower_npc.h"
@@ -596,7 +597,11 @@ static void CB2_EndWildBattle(void)
     }
     else
     {
-        SetMainCallback2(CB2_ReturnToField);
+        if (ShouldDoInfectionMutate() == TRUE)
+            SetMainCallback2(CB2_ReturnToFieldInfectionMutate);
+        else
+            SetMainCallback2(CB2_ReturnToField);
+        
         DowngradeBadPoison();
         gFieldCallback = FieldCB_ReturnToFieldNoScriptCheckMusic;
     }

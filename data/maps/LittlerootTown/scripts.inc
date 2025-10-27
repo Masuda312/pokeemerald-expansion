@@ -280,26 +280,6 @@ LittlerootTown_EventScript_GoodLuck::
 	release
 	end
 
-LittlerootTown_EventScript_NeedPokemonTriggerLeft::
-	lockall
-	applymovement LOCALID_LITTLEROOT_TWIN, LittlerootTown_Movement_TwinApproachPlayerLeft
-	waitmovement 0
-	call LittlerootTown_EventScript_DangerousWithoutPokemon
-	applymovement LOCALID_LITTLEROOT_TWIN, LittlerootTown_Movement_TwinReturnLeft
-	waitmovement 0
-	releaseall
-	end
-
-LittlerootTown_EventScript_DangerousWithoutPokemon::
-	msgbox LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_LITTLEROOT_TWIN, LittlerootTown_Movement_TwinPushPlayerFromRoute
-	applymovement LOCALID_PLAYER, LittlerootTown_Movement_PushPlayerBackFromRoute
-	waitmovement 0
-	msgbox LittlerootTown_Text_DangerousIfYouDontHavePokemon, MSGBOX_DEFAULT
-	closemessage
-	return
-
 LittlerootTown_Movement_TwinApproachPlayerLeft:
 	face_right
 	delay_8
@@ -316,10 +296,6 @@ LittlerootTown_Movement_TwinApproachPlayerLeft:
 	face_down
 	step_end
 
-LittlerootTown_Movement_TwinPushPlayerFromRoute:
-	walk_down
-	step_end
-
 LittlerootTown_Movement_TwinReturnLeft:
 	walk_right
 	walk_down
@@ -331,22 +307,6 @@ LittlerootTown_Movement_TwinReturnLeft:
 	walk_up
 	walk_in_place_faster_down
 	step_end
-
-LittlerootTown_Movement_PushPlayerBackFromRoute:
-	lock_facing_direction
-	walk_down
-	unlock_facing_direction
-	step_end
-
-LittlerootTown_EventScript_NeedPokemonTriggerRight::
-	lockall
-	applymovement LOCALID_LITTLEROOT_TWIN, LittlerootTown_Movement_TwinApproachPlayerRight
-	waitmovement 0
-	call LittlerootTown_EventScript_DangerousWithoutPokemon
-	applymovement LOCALID_LITTLEROOT_TWIN, LittlerootTown_Movement_TwinReturnRight
-	waitmovement 0
-	releaseall
-	end
 
 LittlerootTown_Movement_TwinApproachPlayerRight:
 	face_right

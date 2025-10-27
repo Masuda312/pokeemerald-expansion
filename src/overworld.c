@@ -1,6 +1,7 @@
 #include "global.h"
 #include "overworld.h"
 #include "battle_pyramid.h"
+#include "battle_main.h"
 #include "battle_setup.h"
 #include "berry.h"
 #include "bg.h"
@@ -1949,6 +1950,13 @@ void CB2_ReturnToFieldFadeFromBlack(void)
 {
     FieldClearVBlankHBlankCallbacks();
     gFieldCallback = FieldCB_WarpExitFadeFromBlack;
+    CB2_ReturnToField();
+}
+
+void CB2_ReturnToFieldInfectionMutate(void)
+{
+    FieldClearVBlankHBlankCallbacks();
+    gFieldCallback = FieldCB_ReturnToFieldInfectionMutate;
     CB2_ReturnToField();
 }
 

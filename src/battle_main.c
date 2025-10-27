@@ -77,6 +77,8 @@
 #include "constants/weather.h"
 #include "cable_club.h"
 
+#define SPECIES_NONE 0
+
 extern const struct BgTemplate gBattleBgTemplates[];
 extern const struct WindowTemplate *const gBattleWindowTemplates[];
 

@@ -155,33 +155,6 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 10,
-      "y": 4,
-      "elevation": 3,
-      "var": "VAR_LITTLEROOT_TOWN_STATE",
-      "var_value": "0",
-      "script": "LittlerootTown_EventScript_NeedPokemonTriggerLeft"
-    },
-    {
-      "type": "trigger",
-      "x": 11,
-      "y": 4,
-      "elevation": 3,
-      "var": "VAR_LITTLEROOT_TOWN_STATE",
-      "var_value": "0",
-      "script": "LittlerootTown_EventScript_NeedPokemonTriggerRight"
-    },
-    {
-      "type": "trigger",
-      "x": 11,
-      "y": 4,
-      "elevation": 3,
-      "var": "VAR_LITTLEROOT_TOWN_STATE",
-      "var_value": "1",
-      "script": "LittlerootTown_EventScript_GoSaveBirchTrigger"
-    },
-    {
-      "type": "trigger",
       "x": 8,
       "y": 12,
       "elevation": 3,
@@ -218,6 +191,15 @@
     },
     {
       "type": "trigger",
+      "x": 11,
+      "y": 5,
+      "elevation": 3,
+      "var": "VAR_LITTLEROOT_TOWN_STATE",
+      "var_value": "3",
+      "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger1"
+    },
+    {
+      "type": "trigger",
       "x": 10,
       "y": 5,
       "elevation": 3,
@@ -228,11 +210,11 @@
     {
       "type": "trigger",
       "x": 11,
-      "y": 5,
+      "y": 4,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
-      "var_value": "3",
-      "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger1"
+      "var_value": "1",
+      "script": "LittlerootTown_EventScript_GoSaveBirchTrigger"
     }
   ],
   "bg_events": [

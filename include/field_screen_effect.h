@@ -21,6 +21,7 @@ bool8 FieldCB_ReturnToFieldOpenStartMenu(void);
 void ReturnToFieldOpenStartMenu(void);
 void FieldCB_ReturnToFieldNoScript(void);
 void FieldCB_ReturnToFieldNoScriptCheckMusic(void);
+void FieldCB_ReturnToFieldInfectionMutate(void);
 void DoWarp(void);
 void DoDiveWarp(void);
 void DoWhiteFadeWarp(void);

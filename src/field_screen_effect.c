@@ -8,6 +8,7 @@
 #include "event_object_lock.h"
 #include "event_object_movement.h"
 #include "event_scripts.h"
+#include "field_message_box.h"
 #include "field_player_avatar.h"
 #include "field_screen_effect.h"
 #include "field_special_scene.h"
@@ -23,6 +24,7 @@
 #include "menu.h"
 #include "mirage_tower.h"
 #include "metatile_behavior.h"
+#include "mutation.h"
 #include "palette.h"
 #include "overworld.h"
 #include "scanline_effect.h"
@@ -152,6 +154,17 @@ static void Task_WaitForFadeAndEnableScriptCtx(u8 taskID)
     }
 }
 
+static void Task_WaitForFadeThenMutateAndShow(u8 taskID)
+{
+    if (WaitForWeatherFadeIn() == TRUE)
+    {
+        DestroyTask(taskID);
+        ChangeInfectedToDeoxys();
+        ScriptContext_SetupScript(EventScript_InfectionMutation);
+        ScriptContext_Enable();
+    }
+}
+
 void FieldCB_ContinueScriptHandleMusic(void)
 {
     LockPlayerFieldControls();
@@ -165,6 +178,14 @@ void FieldCB_ContinueScript(void)
     LockPlayerFieldControls();
     FadeInFromBlack();
     CreateTask(Task_WaitForFadeAndEnableScriptCtx, 10);
+}
+
+void FieldCB_ReturnToFieldInfectionMutate(void)
+{
+    LockPlayerFieldControls();
+    FadeInFromBlack();
+    CreateTask(Task_WaitForFadeThenMutateAndShow, 10);
+    gFieldCallback = NULL;
 }
 
 static void Task_ReturnToFieldCableLink(u8 taskId)

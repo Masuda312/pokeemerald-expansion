@@ -1103,6 +1103,13 @@ EventScript_VsSeekerChargingDone::
 	releaseall
 	end
 
+EventScript_InfectionMutation::
+	msgbox gText_PokemonHasMutated, MSGBOX_DEFAULT
+    waitmessage
+    waitbuttonpress
+    closemessage
+    end
+
 	.include "data/scripts/pc_transfer.inc"
 	.include "data/scripts/questionnaire.inc"
 	.include "data/scripts/abnormal_weather.inc"
