@@ -498,6 +498,7 @@ struct SpeciesInfo /*0xC4*/
     u32 isGalarianForm:1;
     u32 isHisuianForm:1;
     u32 isPaldeanForm:1;
+    u32 isDeoxyForm:1;
     u32 cannotBeTraded:1;
     u32 perfectIVCount:3;   // This species will always generate with the specified amount of perfect IVs.
     u32 dexForceRequired:1; // This species will be taken into account for Pokédex ratings even if they have the "isMythical" flag set.

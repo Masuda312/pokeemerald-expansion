@@ -10003,6 +10003,12 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
+#if P_DEOXY_FORMS
+    const u32 gMonFrontPic_ZigzagoonDeoxy[] = INCBIN_U32("graphics/pokemon/zigzagoon/deoxy/anim_front.4bpp.smol");
+    const u16 gMonPalette_ZigzagoonDeoxy[] = INCBIN_U16("graphics/pokemon/zigzagoon/deoxy/normal.gbapal");
+    const u32 gMonBackPic_ZigzagoonDeoxy[] = INCBIN_U32("graphics/pokemon/zigzagoon/deoxy/back.4bpp.smol");
+    const u16 gMonShinyPalette_ZigzagoonDeoxy[] = INCBIN_U16("graphics/pokemon/zigzagoon/deoxy/shiny.gbapal");
+
     const u32 gMonFrontPic_Obstagoon[] = INCBIN_U32("graphics/pokemon/obstagoon/front.4bpp.smol");
     const u16 gMonPalette_Obstagoon[] = INCBIN_U16("graphics/pokemon/obstagoon/normal.gbapal");
     const u32 gMonBackPic_Obstagoon[] = INCBIN_U32("graphics/pokemon/obstagoon/back.4bpp.smol");
@@ -10019,6 +10025,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_GALARIAN_FORMS
+#endif //P_DEOXY_FORMS
 #endif //P_FAMILY_ZIGZAGOON
 
 #if P_FAMILY_WURMPLE

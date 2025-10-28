@@ -757,6 +757,9 @@ static const u16 sZigzagoonFormSpeciesIdTable[] = {
 #if P_GALARIAN_FORMS
     SPECIES_ZIGZAGOON_GALAR,
 #endif
+#if P_DEOXY_FORMS
+    SPECIES_ZIGZAGOON_DEOXY,
+#endif
     FORM_SPECIES_END,
 };
 

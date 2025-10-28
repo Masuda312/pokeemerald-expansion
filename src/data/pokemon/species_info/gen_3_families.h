@@ -1364,6 +1364,71 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_OBSTAGOON, CONDITIONS({IF_TIME, TIME_NIGHT})}),
     },
 
+#if P_DEOXY_FORMS
+    [SPECIES_ZIGZAGOON_DEOXY] =
+    {
+        .baseHP        = 38,
+        .baseAttack    = 30,
+        .baseDefense   = 41,
+        .baseSpeed     = 60,
+        .baseSpAttack  = 30,
+        .baseSpDefense = 41,
+        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_NORMAL),
+        .catchRate = 255,
+        .expYield = ZIGZAGOON_EXP_YIELD,
+        .evYield_Speed = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_PICKUP, ABILITY_GLUTTONY, ABILITY_QUICK_FEET },
+        .bodyColor = BODY_COLOR_RED,
+        .speciesName = _("Zigzagoon"),
+        .cryId = CRY_ZIGZAGOON,
+        .natDexNum = NATIONAL_DEX_ZIGZAGOON,
+        .categoryName = _("Tiny Raccoon"),
+        .height = 4,
+        .weight = 175,
+        .description = COMPOUND_STRING(
+            "Seems to be a weird mutated form\n"
+            "of Zigzagoon?"),
+        .pokemonScale = 560,
+        .pokemonOffset = 22,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_ZigzagoonDeoxy,
+        .frontPicSize = MON_COORDS_SIZE(56, 40),
+        .frontPicYOffset = 13,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_ZigzagoonDeoxy,
+        .backPicSize = MON_COORDS_SIZE(56, 48),
+        .backPicYOffset = 12,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_ZigzagoonDeoxy,
+        .shinyPalette = gMonShinyPalette_ZigzagoonDeoxy,
+        .iconSprite = gMonIcon_Zigzagoon,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
+        SHADOW(-5, 0, SHADOW_SIZE_M)
+        FOOTPRINT(Zigzagoon)
+        OVERWORLD(
+            sPicTable_Zigzagoon,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Zigzagoon,
+            gShinyOverworldPalette_Zigzagoon
+        )
+        .isDeoxyForm = TRUE,
+        .levelUpLearnset = sZigzagoonDeoxyLevelUpLearnset,
+        .teachableLearnset = sZigzagoonTeachableLearnset,
+        .formSpeciesIdTable = sZigzagoonFormSpeciesIdTable,
+        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_LINOONE}),
+    },
+
     [SPECIES_OBSTAGOON] =
     {
         .baseHP        = 93,
@@ -1427,6 +1492,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .teachableLearnset = sObstagoonTeachableLearnset,
     },
 #endif //P_GALARIAN_FORMS
+#endif //P_DEOXY_FORMS
 #endif //P_FAMILY_ZIGZAGOON
 
 #if P_FAMILY_WURMPLE

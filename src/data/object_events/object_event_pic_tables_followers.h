@@ -2228,6 +2228,10 @@ static const struct SpriteFrameImage sPicTable_Linoone[] = {
 static const struct SpriteFrameImage sPicTable_ZigzagoonGalar[] = {
     overworld_ascending_frames(gObjectEventPic_ZigzagoonGalar, 4, 4),
 };
+#if P_DEOXY_FORMS
+static const struct SpriteFrameImage sPicTable_ZigzagoonDeoxy[] = {
+    overworld_ascending_frames(gObjectEventPic_Zigzagoon, 4, 4),
+};
 static const struct SpriteFrameImage sPicTable_LinooneGalar[] = {
     overworld_ascending_frames(gObjectEventPic_LinooneGalar, 4, 4),
 };
@@ -2235,6 +2239,7 @@ static const struct SpriteFrameImage sPicTable_Obstagoon[] = {
     overworld_ascending_frames(gObjectEventPic_Obstagoon, 4, 4),
 };
 #endif //P_GALARIAN_FORMS
+#endif //P_DEOXY_FORMS
 #endif //P_FAMILY_ZIGZAGOON
 
 #if P_FAMILY_WURMPLE

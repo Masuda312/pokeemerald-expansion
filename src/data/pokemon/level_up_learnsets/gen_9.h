@@ -7171,6 +7171,25 @@ static const struct LevelUpMove sLinooneGalarLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 
+#if P_DEOXY_FORMS
+static const struct LevelUpMove sZigzagoonDeoxyLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_TACKLE),
+    LEVEL_UP_MOVE( 1, MOVE_GROWL),
+    LEVEL_UP_MOVE( 3, MOVE_SAND_ATTACK),
+    LEVEL_UP_MOVE( 6, MOVE_TAIL_WHIP),
+    LEVEL_UP_MOVE( 9, MOVE_COVET),
+    LEVEL_UP_MOVE(12, MOVE_HEADBUTT),
+    LEVEL_UP_MOVE(15, MOVE_BABY_DOLL_EYES),
+    LEVEL_UP_MOVE(18, MOVE_PIN_MISSILE),
+    LEVEL_UP_MOVE(21, MOVE_REST),
+    LEVEL_UP_MOVE(24, MOVE_TAKE_DOWN),
+    LEVEL_UP_MOVE(27, MOVE_FLING),
+    LEVEL_UP_MOVE(30, MOVE_FLAIL),
+    LEVEL_UP_MOVE(33, MOVE_BELLY_DRUM),
+    LEVEL_UP_MOVE(36, MOVE_DOUBLE_EDGE),
+    LEVEL_UP_END
+};
+
 static const struct LevelUpMove sObstagoonLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_OBSTRUCT),
     LEVEL_UP_MOVE( 1, MOVE_OBSTRUCT),
@@ -7197,6 +7216,7 @@ static const struct LevelUpMove sObstagoonLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 #endif //P_GALARIAN_FORMS
+#endif
 #endif //P_FAMILY_ZIGZAGOON
 
 #if P_FAMILY_WURMPLE

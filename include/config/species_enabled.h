@@ -38,6 +38,7 @@
 #define P_GALARIAN_FORMS                 P_REGIONAL_FORMS
 #define P_HISUIAN_FORMS                  P_REGIONAL_FORMS
 #define P_PALDEAN_FORMS                  P_REGIONAL_FORMS
+#define P_DEOXY_FORMS                    P_REGIONAL_FORMS
 
 // Big groups of forms that aren't always desired when choosing families.
 #define P_PIKACHU_EXTRA_FORMS            TRUE
